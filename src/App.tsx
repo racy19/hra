@@ -1,11 +1,13 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
+import { GameScreen } from './components/GameScreen';
 
 function App() {
 
   return (
-    <div className="screen">
-      <h1 className="text">Vítej v mojí kurevsky dobrý hře</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<GameScreen backgroundUrl='../../public/images/background/les.jpg' />} />
+    </Routes>
   );
 }
 
