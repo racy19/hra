@@ -66,13 +66,40 @@ body,
   grid-template-columns: 1fr 1fr;
 }
 
-.button-container button {
+.button-container button,
+.button-top-container button {
   border-color: white;
   background: rgba(0, 0, 0, .95);
   line-height: 1.7;
 }
 
-.button-container button:hover {
+.button-container button:hover,
+.button-top-container button:hover {
   background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.6));
   cursor: pointer;
+}
+
+.button-top-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.corner-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.top-left {
+  left: 1rem;
+}
+
+.top-right {
+  right: 1rem;
 }

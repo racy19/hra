@@ -11,6 +11,10 @@ export const GameScreen = ({ backgroundUrl, children }: GameScreenProps) => {
         : null
       }
       <div className="element-layer">
+        <div className="button-top-container">
+          <button>{"< Ulozit a zpet"}</button>
+          <button>X Zavrit hru</button>
+        </div>
         <p className="screen-text-top">Hra běží..tton 1 ty jeden curaku vyprcanej hlavne mi rekni kde mam t.</p>
         <div className="button-container">
           <button>button 1 ty jeden curaku vyprcanej hlavne mi rekni kde mam to pivo</button>
