@@ -9,6 +9,8 @@ body,
   /* Skryje scrollbary */
   background-color: black;
   /* Pro jistotu */
+  font-family: monospace;
+
 }
 
 .screen {
@@ -30,14 +32,47 @@ body,
   z-index: 0;
 }
 
-.text {
-  top: 50%;
+.element-layer * {
   position: relative;
-  font-size: 2rem;
-  font-family: monospace;
-  background: black;
-  opacity: .7;
+  z-index: 1;
+}
+
+.element-layer .screen-text,
+.element-layer .screen-text-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
   display: inline;
   padding: 1rem;
-  z-index: 1;
+}
+
+.element-layer .screen-text-top {
+  top: 1rem;
+  transform: translate(-50%, 0);
+}
+
+.button-container {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-container button {
+  border-color: white;
+  background: rgba(0, 0, 0, .95);
+  line-height: 1.7;
+}
+
+.button-container button:hover {
+  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 0.6));
+  cursor: pointer;
 }
