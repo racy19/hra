@@ -103,3 +103,7 @@ body,
 .top-right {
   right: 1rem;
 }
+
+.invisible {
+  visibility: hidden;
+}

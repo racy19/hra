@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
 
 async function createWindow() {
@@ -12,9 +12,9 @@ async function createWindow() {
     },
   });
 
-  const startUrl = process.env.VITE_DEV_SERVER_URL || 
+  const startUrl = process.env.VITE_DEV_SERVER_URL ||
     `file://${path.join(__dirname, '../dist/index.html')}`;
-    console.log('Načítám frontend z:', process.env.VITE_DEV_SERVER_URL);
+  console.log('Načítám frontend z:', process.env.VITE_DEV_SERVER_URL);
 
 
   try {
@@ -26,6 +26,11 @@ async function createWindow() {
 }
 
 app.whenReady().then(createWindow);
+
+ipcMain.on('quit-app', () => {
+  console.log('Uživatel chce zavřít celou tu mrdku.'); // debug
+  app.quit();
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
