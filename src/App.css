@@ -50,8 +50,12 @@ body,
 }
 
 .element-layer .screen-text-top {
-  top: 1rem;
+  top: 6rem;
   transform: translate(-50%, 0);
+}
+
+.element-layer .screen-text-top p {
+  margin: 0;
 }
 
 .button-container {

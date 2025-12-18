@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 interface GameScreenProps {
   backgroundUrl?: string;
+  headline?: string;
+  mainText?: string;
+  buttons?: { text: string, navigate: string }[];
   children?: React.ReactNode;
   isHomeScreen?: boolean;
 }
@@ -10,11 +13,10 @@ interface ElectronAPI {
   quitApp: () => void;
 }
 
-export const GameScreen = ({ backgroundUrl, children, isHomeScreen = false }: GameScreenProps) => {
+export const GameScreen = ({ backgroundUrl, headline, mainText, buttons, children, isHomeScreen = false }: GameScreenProps) => {
   const navigate = useNavigate();
 
   const handleQuit = () => {
-    // @ts-ignore pokud TypeScript neví o electronAPI
     const electronAPI = (window as unknown as { electronAPI?: ElectronAPI }).electronAPI;
     electronAPI?.quitApp?.();
   };
@@ -30,18 +32,19 @@ export const GameScreen = ({ backgroundUrl, children, isHomeScreen = false }: Ga
           <button className={isHomeScreen ? "invisible" : ""} onClick={() => navigate('/')}>{"< Ulozit a zpet"}</button>
           <button onClick={handleQuit}>X Zavrit uplne</button>
         </div>
-        {isHomeScreen ? null :
-          (
-            <>
-              <p className="screen-text-top">Hra běží..tton 1 ty jeden curaku vyprcanej hlavne mi rekni kde mam t.</p>
-              <div className="button-container">
-                <button>button 1 ty jeden curaku vyprcanej hlavne mi rekni kde mam to pivo</button>
-                <button>button 2</button>
-                <button>button 3</button>
-                <button>button 4den curaku vyprcanej hlavne mi rekni kde mam to pivo</button>
-              </div></>
-          )
+        {(mainText || headline) &&
+          <div className="screen-text-top">
+            {headline && <h2 style={{ padding: "0 2rem" }}>{headline}</h2>}
+            {mainText && <p>{mainText}</p>}
+          </div>
         }
+        <div className="button-container">
+          {buttons?.map((button, index) => (
+            <button key={index} onClick={() => navigate(`/${button.navigate.toLowerCase()}`)}>{
+              button.text}
+            </button>
+          ))}
+        </div>
         {children}
       </div>
     </div>

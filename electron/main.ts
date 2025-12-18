@@ -4,9 +4,9 @@ import * as path from 'path';
 
 async function createWindow() {
   const win = new BrowserWindow({
-    width: 1600,
-    height: 800,
-    frame: true,
+    width: 1500,
+    height: 1000,
+    frame: false, // hide native top bar
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },

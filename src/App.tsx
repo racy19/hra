@@ -7,8 +7,14 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomeScreen backgroundUrl='../../public/images/background/les.jpg' />} />
-      <Route path='/uvod' element={<GameScreen backgroundUrl='../../public/images/background/les.jpg' />} />
+      <Route path="/" element={<HomeScreen backgroundUrl='../../public/images/background/forest.png' />} />
+      <Route
+        path='/uvod'
+        element=
+        {<GameScreen
+          backgroundUrl='../../public/images/background/hill-valley.png'
+          mainText="Vítej v hře!"
+        />} />
     </Routes>
   );
 }
