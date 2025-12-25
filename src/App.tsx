@@ -1,20 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css'
-import { GameScreen } from './components/GameScreen';
 import { HomeScreen } from './components/HomeScreen';
+import Game from './components/Game';
+import { useState } from 'react';
 
 function App() {
+  const [gameId, setGameId] = useState(0)
 
   return (
     <Routes>
-      <Route path="/" element={<HomeScreen backgroundUrl='../../public/images/background/forest.png' />} />
+      <Route path="/" element={<HomeScreen backgroundUrl='../../public/images/background/forest.png' onStart={() => setGameId(id => id + 1)} />} />
       <Route
-        path='/uvod'
-        element=
-        {<GameScreen
-          backgroundUrl='../../public/images/background/hill-valley.png'
-          mainText="Vítej v hře!"
-        />} />
+        path='/hra'
+        element={<Game key={gameId} initialHealth={100} />}
+      />
     </Routes>
   );
 }

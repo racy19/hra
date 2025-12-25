@@ -1,0 +1,221 @@
+{
+    "intro": {
+        "text": "Probudil ses na mýtině uprostřed temného lesa. Nevíš, jak ses sem dostal, ale nejspíš to bude nějak souviset s tou včerejší pařbou. V dálce slyšíš zvuky nočního lesa a cítíš chladný vítr zlehka vanout kolem. Co uděláš?",
+        "background": "forest.png",
+        "options": [
+            {
+                "label": "Půjdu dál lesem.",
+                "next": "go-ahead",
+                "health": -5
+            },
+            {
+                "label": "Počkám chvíli na místě, třeba se něco stane nebo mě něco napadne.",
+                "next": "wait-moment",
+                "health": -5
+            }
+        ]
+    },
+    "go-ahead": {
+        "text": "Rozhodl ses jít dál. Po nějaké době uslyšíš zvuk jakoby se v dáli otevíraly rozvrzané dveře staré chatrče. Možná jsou tam lidé, kteří by ti mohli pomoci.",
+        "background": "forest-stones.png",
+        "options": [
+            {
+                "label": "Zkusím jít za tím zvukem.",
+                "next": "weird-sound",
+                "health": -5
+            },
+            {
+                "label": "Kašlu na to a jdu dál rovnou lesem.",
+                "next": "go-ahead-again",
+                "health": -5
+            }
+        ]
+    },
+    "wait-moment": {
+        "text": "Rozhodl ses počkat. Chvíli tedy čekáš, ale neděje se vůbec nic. Ani tě nic chytrého nenapadá. Tak se rozhodneš nakonec jít dál.",
+        "background": "forest.png",
+        "options": [
+            {
+                "label": "Jdu.",
+                "next": "go-ahead",
+                "health": -5
+            }
+        ]
+    },
+    "weird-sound": {
+        "text": "Rozhodl ses jít za tím zvukem. Po chvíli chůze zjišťuješ, že se ti to asi zdálo, protože nikde nic není.",
+        "background": "forest-stones.png",
+        "options": [
+            {
+                "label": "Jdu dál, co se dá dělat.",
+                "next": "go-ahead-again",
+                "health": -5
+            }
+        ]
+    },
+    "go-ahead-again": {
+        "text": "Pokračuješ dál lesem až dojdeš na rozcestí. Jedna cesta vede do příkrého kopce a druhá do hluboké rokle, kde slyšíš šumět potok.",
+        "background": "hill-valley.png",
+        "options": [
+            {
+                "label": "Půjdu do kopce.",
+                "next": "up-the-hill",
+                "health": -5
+            },
+            {
+                "label": "Půjdu do rokle k potoku.",
+                "next": "down-the-valley",
+                "health": -5
+            }
+        ]
+    },
+    "up-the-hill": {
+        "text": "Rozhodl ses jít do kopce. Cesta byla strmá a náročná, ale nakonec jsi to zvládl. Když se dostaneš na vrchol, ucítíš vůni hořícího dřeva a ve vzduch se vznáší kouřová stopa.",
+        "background": "misty-path.png",
+        "options": [
+            {
+                "label": "Jdu za tím kouřem, třeba tam budou lidi.",
+                "next": "distant-fire",
+                "health": -5
+            },
+            {
+                "label": "Nechci potkat lidi, jdu jinam.",
+                "next": "find-cottage",
+                "health": -5
+            }
+        ]
+    },
+    "down-the-valley": {
+        "text": "Rozhodl ses jít do rokle k potoku. Cesta byla kluzká a nebezpečná, ale nakonec jsi to zvládl. Když se dostaneš dolů, ucítíš svěží vůni vody a uvidš loďku přivázanou ke břehu.",
+        "background": "boat.png",
+        "options": [
+            {
+                "label": "Nebudu krást loď a půjdu dál podél vody.",
+                "next": "beer-food",
+                "health": -5
+            },
+            {
+                "label": "Najdu kamen, rozbiju řetěz a vezmu odpluju pryč.",
+                "next": "boat-ride",
+                "health": -5
+            }
+        ]
+    },
+    "distant-fire": {
+        "text": "Rozhodl ses jít za kouřem. Po chvíli skutečně uvidíš oheň, ale sedí u něj nápadně opilí trampové.",
+        "background": "fire.png",
+        "options": [
+            {
+                "label": "To je jedno, třeba s nima bude sranda a zahrajeme si magicy (čti medžiky).",
+                "next": "meet-tramps",
+                "health": -5
+            },
+            {
+                "label": "Tak to teda ne, jdu radši dál sám.",
+                "next": "find-cottage",
+                "health": -5
+            }
+        ]
+    },
+    "meet-tramps": {
+        "text": "Rozhodl ses přidat k trampům. Po chvíli zjišťuješ, že jsou to docela fajn lidi a že ti můžou pomoct najít cestu z lesa ven.",
+        "background": "tramps.png",
+        "options": [
+            {
+                "label": "Díky nim se dostáváš z lesa ven. Vyhrál jsi!",
+                "next": "end",
+                "health": -5
+            }
+        ]
+    },
+    "find-cottage": {
+        "text": "Pokračuješ dál lesem až dojdeš narazíš na hodně starou chatu.",
+        "background": "cottage.png",
+        "options": [
+            {
+                "label": "Vstoupím do chaty.",
+                "next": "end",
+                "health": -5
+            },
+            {
+                "label": "Nechci vstupovat, jdu dál.",
+                "next": "end",
+                "health": -5
+            }
+        ]
+    },
+    "beer-food": {
+        "text": "Rozhodl ses jít podél vody. Po chvíli chůze narazíš na pivo a buřty, které tu ztratil nějaký ožralý tramp. Plechovka je příjemně studená, podobně jako vlhký vzduch kolem tebe.",
+        "background": "beer-sausages.png",
+        "options": [
+            {
+                "label": "Okamžitě otvírám pivo. A pokračuju v chůzi.",
+                "next": "end",
+                "health": -5
+            },
+            {
+                "label": "Nejdřív se zakousnu do buřta. A pokračuju v chůzi.",
+                "next": "women-under-root",
+                "health": -5
+            }
+        ]
+    },
+    "boat-ride": {
+        "text": "Rozhodl ses vzít loďku a odplout pryč. Plavba je klidná a osvěžující. Po nějaké době ucítíš vůni uzeniny a dostaneš na ni hroznou chuť.",
+        "background": "boat-cruise.png",
+        "options": [
+            {
+                "label": "Rozhlédnu se kolem, odkud ta vůně může pocházet.",
+                "next": "overboard",
+                "health": -5
+            },
+            {
+                "label": "Ignoruju to a pluju dál.",
+                "next": "end",
+                "health": -5
+            }
+        ]
+    },
+    "overboard": {
+        "text": "Při zjišťování původu vůně jsi přehlídl kamen, narazil na něj vypadl do vody. Než ses rozkoukal, loď byla v tahu. Vystoupil jsi tedy na břeh, protože se musíš zahřát. Ale po chilce najdeš telefon, na kterém svítí jedna čárka baterky.",
+        "background": "nokia.png",
+        "options": [
+            {
+                "label": "Zkusím někomu zavolat.",
+                "next": "phone-call",
+                "health": -5
+            },
+            {
+                "label": "Kašlu na telefon, zajímají mě ty buřty. Jdu dál podél potoka",
+                "next": "beer-food",
+                "health": -5
+            }
+        ]
+    },
+    "women-under-root": {
+        "text": "Po zakousnutí do buřta pokračuješ v chůzi. Po chvíli narazíš starší ženu uvíznutou pod kořenem. Vypadá velice vystrašeně a nedokáže vydat ani hlásku. Něco na tebe gestikuluje.",
+        "background": "forest.png",
+        "options": [
+            {
+                "label": "Pomůžu jí a zeptám se jí, jestli neví, jak se dostat z lesa ven.",
+                "next": "end",
+                "health": -5
+            },
+            {
+                "label": "Nechám jí být a jdu dál.",
+                "next": "end",
+                "health": -5
+            }
+        ]
+    },
+    "phone-call": {
+        "text": "Rozhodl ses někomu zavolat. Ale telefon je prokletý a vždy, když někomu zavoláš, zvedne to Jolanda, které můžeš položit pouze jednu otázku a ona ti odpoví pouze tři.",
+        "background": "jolanda.png",
+        "options": []
+    },
+    "end": {
+        "text": "Dostal ses až na konec lesa. Před sebou vidíš civilizaci. Vyhrál jsi!",
+        "background": "finish.png",
+        "options": []
+    }
+}

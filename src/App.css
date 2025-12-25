@@ -43,7 +43,7 @@ body,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   background: rgba(0, 0, 0, 0.8);
   display: inline;
   padding: 1rem;
@@ -88,6 +88,7 @@ body,
   position: absolute;
   top: 1rem;
   display: flex;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -110,4 +111,45 @@ body,
 
 .invisible {
   visibility: hidden;
+}
+
+.health-display {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* progressbar  */
+
+.bar {
+  /* 0–100 */
+  width: 200px;
+  height: 20px;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid white
+}
+
+.fill {
+  height: 100%;
+  width: calc(var(--p) * 1%);
+  background: white;
+  border-radius: inherit;
+  transition: width 600ms steps(100, end);
+  /* “po jednotkách” */
+}
+
+.label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font: 12px/1;
+  color: #0f172a;
+  mix-blend-mode: multiply;
 }
